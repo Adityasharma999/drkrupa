@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  [id] {
+    scroll-margin-top: 6.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-charcoal;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-orange-200 text-teal-900;
+  }
+
+  :focus-visible {
+    outline: 2px solid #166158;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  input,
+  textarea,
+  button,
+  select {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold leading-none transition-all duration-300 ease-out will-change-transform hover:-translate-y-0.5 active:translate-y-0 disabled:pointer-events-none disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply bg-orange-600 px-7 py-4 text-[0.95rem] text-white shadow-btn hover:bg-orange-500 hover:shadow-btn;
+  }
+
+  .btn-teal {
+    @apply bg-teal-700 px-7 py-4 text-[0.95rem] text-white shadow-teal hover:bg-teal-600;
+  }
+
+  .btn-outline {
+    @apply border border-teal-200/80 bg-white px-7 py-4 text-[0.95rem] text-teal-800 shadow-soft hover:border-teal-400 hover:shadow-lift;
+  }
+
+  .btn-ghost-light {
+    @apply border border-white/30 bg-white/10 px-7 py-4 text-[0.95rem] text-white backdrop-blur-sm hover:border-white/60 hover:bg-white/20;
+  }
+
+  .btn-sm {
+    @apply px-5 py-3 text-sm;
+  }
+
+  .card {
+    @apply rounded-4xl border border-teal-100/70 bg-white shadow-soft;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-teal-700;
+  }
+
+  .field {
+    @apply w-full rounded-2xl border border-teal-100 bg-ivory px-4 py-3.5 text-[0.95rem] text-charcoal placeholder:text-charcoal-mute/60 transition-all duration-200 focus:border-teal-400 focus:bg-white focus:shadow-soft focus:outline-none;
+  }
+
+  .field-error {
+    @apply border-orange-400 bg-orange-50/40;
+  }
+}
+
+@layer utilities {
+  .blob-organic {
+    border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
+  }
+
+  .blob-organic-2 {
+    border-radius: 42% 58% 48% 52% / 55% 42% 58% 45%;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
